@@ -1,0 +1,194 @@
+/* ── Backdrop ── */
+.hd-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+  backdrop-filter: blur(2px);
+}
+
+/* ── Dialog box ── */
+.hd-dialog {
+  background: #242424;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.8);
+  animation: hd-in 0.18s ease;
+}
+
+@keyframes hd-in {
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)     scale(1); }
+}
+
+/* ── Header ── */
+.hd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid #333;
+  flex-shrink: 0;
+}
+
+.hd-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #e0e0e0;
+  letter-spacing: 0.3px;
+}
+
+.hd-close {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 3px;
+  line-height: 1;
+  transition: background 0.1s, color 0.1s;
+}
+.hd-close:hover { background: #3a3a3a; color: #ccc; }
+
+/* ── Body ── */
+.hd-body {
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hd-body::-webkit-scrollbar { width: 6px; }
+.hd-body::-webkit-scrollbar-track { background: #1e1e1e; }
+.hd-body::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
+
+.hd-lead {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.7;
+  padding: 10px 12px;
+  background: #1a1a1a;
+  border-left: 3px solid #4a90d9;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ── Steps ── */
+.hd-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hd-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 4px;
+  transition: background 0.1s;
+}
+.hd-step:hover { background: #2a2a2a; }
+
+.hd-step-icon {
+  width: 36px;
+  height: 36px;
+  background: #2e2e2e;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.hd-step-body { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+
+.hd-step-num {
+  font-size: 9px;
+  font-weight: 700;
+  color: #4a90d9;
+  letter-spacing: 1px;
+}
+
+.hd-step-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.hd-step-desc {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.65;
+}
+
+/* ── Tips ── */
+.hd-tips {
+  background: #1e1e1e;
+  border: 1px solid #2e2e2e;
+  border-radius: 4px;
+  padding: 12px 14px;
+}
+
+.hd-tips-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #aaa;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.hd-tips ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hd-tips li {
+  font-size: 11px;
+  color: #777;
+  padding-left: 12px;
+  position: relative;
+  line-height: 1.5;
+}
+.hd-tips li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: #4a4a4a;
+}
+
+/* ── Footer ── */
+.hd-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .hd-dialog {
+    max-height: 85dvh;
+    border-radius: 8px;
+  }
+  .hd-step { padding: 10px 8px; gap: 10px; }
+  .hd-step-icon { width: 32px; height: 32px; font-size: 14px; }
+  .hd-step-title { font-size: 12px; }
+}

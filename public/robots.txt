@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://video-cutter.frees.jp/sitemap.xml
